@@ -22,8 +22,11 @@
     	};
 	
 	vbatt: vbatt {
-      		compatible = "zmk,battery-nrf-vddh";
-        	label = "VBATT";
+		compatible = "zmk,battery-voltage-divider";
+  		label = "BATTERY";
+  		io-channels = <&adc 2>;
+  		output-ohms = <2000000>;
+  		full-ohms = <(2000000 + 806000)>;
     	};
 
 	kscan0: kscan_0 {
