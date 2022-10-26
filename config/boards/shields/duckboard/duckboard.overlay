@@ -10,12 +10,21 @@
 / {
 
 	chosen {
-    zephyr,display = &oled;
-  };
+    		zephyr,display = &oled;
+  	};
 
 	chosen {
 		zmk,kscan = &kscan0;
 	};
+	
+	chosen {
+      		zmk,battery = &vbatt;
+    	};
+	
+	vbatt: vbatt {
+      		compatible = "zmk,battery-nrf-vddh";
+        	label = "VBATT";
+    	};
 
 	kscan0: kscan_0 {
 		compatible = "zmk,kscan-gpio-matrix";
